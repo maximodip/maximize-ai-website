@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Chatbot } from "@/components/chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +37,6 @@ export default function RootLayout({
           <SiteHeader />
           <div id="home" className="scroll-mt-14" />
           <main className="container px-4 md:px-6">{children}</main>
-          <Chatbot />
         </ThemeProvider>
       </body>
     </html>
