@@ -35,7 +35,8 @@ export function AboutSection() {
             <p className="text-muted-foreground">
               Terminé la carrera de Tecnicatura Universitaria en Programación,
               tengo más de 3 años de experiencia en desarrollo de software y 1
-              año especializándome en IA conversacional.
+              año especializándome en soluciones aplicando inteligencia
+              artificial.
             </p>
             <p className="text-muted-foreground">
               Mi enfoque combina la potencia de la inteligencia artificial con

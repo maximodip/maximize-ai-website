@@ -11,11 +11,10 @@ export function HeroSection() {
           Disponible
         </div>
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-relaxed bg-gradient-to-b from-primary to-primary/60 bg-clip-text text-transparent pb-2">
-          Atención que convierte, sin contratar más gente.
+          Soluciones con IA para tu empresa.
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Automatizá lo repetitivo; tu equipo se enfoca en ventas y casos
-          especiales.
+          Usa tu tiempo para crecer, no para atender.
         </p>
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Link
