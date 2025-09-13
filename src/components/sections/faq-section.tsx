@@ -58,7 +58,7 @@ export function FAQSection() {
 
   const handleClick = (index: number, event: React.MouseEvent) => {
     // Remove focus after click to avoid visual focus state
-    event.currentTarget.blur();
+    (event.currentTarget as HTMLElement).blur();
     toggleItem(index);
   };
 
