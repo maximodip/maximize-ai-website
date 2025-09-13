@@ -37,7 +37,7 @@ export function SiteHeader() {
     >
       <div className="container flex h-14 items-center">
         <div className="flex flex-1">
-          <Link href="#home" className="flex items-center gap-2 font-semibold">
+          <Link href="/" className="flex items-center gap-2 font-semibold">
             <span>Maximize IA</span>
           </Link>
         </div>
@@ -45,25 +45,25 @@ export function SiteHeader() {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 text-sm md:flex">
           <Link
-            href="#features"
+            href="/#features"
             className="text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             Servicios
           </Link>
           <Link
-            href="#how"
+            href="/#how"
             className="text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             Proceso
           </Link>
           <Link
-            href="#faq"
+            href="/#faq"
             className="text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             FAQ
           </Link>
           <Link
-            href="#about"
+            href="/#about"
             className="text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
             Quién soy
@@ -76,7 +76,7 @@ export function SiteHeader() {
 
           {/* Desktop Contact Button */}
           <Link
-            href="#book"
+            href="/#book"
             className={cn(buttonVariants(), "hidden md:inline-flex")}
           >
             Contacto
@@ -102,35 +102,35 @@ export function SiteHeader() {
         <div className="animate-in slide-in-from-top-2 duration-200 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden">
           <nav className="container flex flex-col items-end space-y-4 py-4">
             <Link
-              href="#features"
+              href="/#features"
               className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               onClick={closeMenu}
             >
               Servicios
             </Link>
             <Link
-              href="#how"
+              href="/#how"
               className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               onClick={closeMenu}
             >
               Proceso
             </Link>
             <Link
-              href="#faq"
+              href="/#faq"
               className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               onClick={closeMenu}
             >
               FAQ
             </Link>
             <Link
-              href="#about"
+              href="/#about"
               className="text-muted-foreground hover:text-foreground transition-colors duration-200"
               onClick={closeMenu}
             >
               Quién soy
             </Link>
             <Link
-              href="#book"
+              href="/#book"
               className={cn(buttonVariants(), "w-fit")}
               onClick={closeMenu}
             >

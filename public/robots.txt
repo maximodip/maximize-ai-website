@@ -1,0 +1,29 @@
+# Robots.txt para Maximize IA
+# https://maximizeia.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://maximizeia.com/sitemap.xml
+
+# Crawl-delay para bots específicos
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+# Bloquear archivos innecesarios
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /.well-known/
+
+# Permitir acceso a recursos importantes
+Allow: /api/chat
+Allow: /_next/static/
+
+# Información adicional
+# Contact: maximodipaparicio@gmail.com
+# Website: https://maximizeia.com
