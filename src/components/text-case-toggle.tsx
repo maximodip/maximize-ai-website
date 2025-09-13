@@ -10,7 +10,7 @@ export function TextCaseToggle() {
 
   useEffect(() => setMounted(true), []);
 
-  const handleClick = (event: React.MouseEvent) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     // Remove focus after click to avoid visual focus state on mobile
     event.currentTarget.blur();
     toggleCase();
