@@ -9,7 +9,7 @@ export function CTASection() {
         La IA no es el futuro, es el presente.
       </h2>
       <p className="text-muted-foreground">
-        Cuéntame tus objetivos — respondo dentro de 24 horas.
+        Cuéntame tus objetivos — te respondo en 24 horas.
       </p>
       <div className="mt-4 flex justify-center">
         <Link

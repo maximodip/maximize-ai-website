@@ -30,7 +30,7 @@ const features = [
   },
   {
     title: "Implementación On‑Premise",
-    desc: "Despliegue en tus propios servidores si lo requerís.",
+    desc: "Despliegue en tus propios servidores si lo necesitas.",
     icon: Server,
   },
   {
@@ -72,8 +72,8 @@ export function FeaturesSection() {
       </div>
       <div className="mx-auto mt-2 max-w-3xl rounded-xl border bg-card p-6 text-sm text-muted-foreground">
         <strong>Dashboard interactivo</strong>: KPIs clave del negocio en tiempo
-        real. Se incluye un PDF completo para que vos o tu equipo puedan
-        mantener la solución.
+        real. Se incluye un PDF completo para que tú o tu equipo puedan mantener
+        la solución.
       </div>
     </section>
   );

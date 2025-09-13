@@ -2,6 +2,7 @@ import {
   HeroSection,
   FeaturesSection,
   ProcessSection,
+  FAQSection,
   AboutSection,
   CTASection,
   Footer,
@@ -13,6 +14,7 @@ export default function HomePage() {
       <HeroSection />
       <FeaturesSection />
       <ProcessSection />
+      <FAQSection />
       <AboutSection />
       <CTASection />
       <Footer />

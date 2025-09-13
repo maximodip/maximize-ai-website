@@ -26,7 +26,7 @@ export function HeroSection() {
             Agenda una reunión sin costo
           </Link>
           <Link
-            href="https://wa.me/5493814057449"
+            href="https://wa.me/5493814057449?text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20empresa"
             target="_blank"
             rel="noreferrer"
             className={cn(
@@ -34,7 +34,7 @@ export function HeroSection() {
               "w-full sm:w-auto"
             )}
           >
-            Escribeme por WhatsApp
+            Escríbeme por WhatsApp
           </Link>
         </div>
       </div>

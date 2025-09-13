@@ -65,7 +65,9 @@ export function AboutSection() {
                         MD
                       </div>
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold">Máximo Dip</h3>
+                    <h3 className="mt-4 text-lg font-semibold">
+                      Maximo Dip - CEO
+                    </h3>
                     <p className="text-sm text-muted-foreground">
                       AI Solutions Specialist
                     </p>
