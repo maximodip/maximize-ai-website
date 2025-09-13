@@ -216,7 +216,7 @@ export default function LegalPage() {
                 maximodipaparicio@gmail.com
               </a>
             </p>
-            <p>Asunto: "Consulta Legal"</p>
+            <p>Asunto: &quot;Consulta Legal&quot;</p>
             <p>
               WhatsApp:{" "}
               <a
