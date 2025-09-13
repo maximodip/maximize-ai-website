@@ -1,23 +1,44 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { TextCaseToggle } from "@/components/text-case-toggle";
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [isMenuOpen]);
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header
+      ref={menuRef}
+      className="sticky top-0 z-40 w-full border-b bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    >
       <div className="container flex h-14 items-center">
         <div className="flex flex-1">
           <Link href="#home" className="flex items-center gap-2 font-semibold">
-            <span>Maximize AI</span>
+            <span>Maximize IA</span>
           </Link>
         </div>
 
@@ -36,6 +57,12 @@ export function SiteHeader() {
             Proceso
           </Link>
           <Link
+            href="#faq"
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            FAQ
+          </Link>
+          <Link
             href="#about"
             className="text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
@@ -44,6 +71,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex flex-1 items-center justify-end gap-2">
+          <TextCaseToggle />
           <ThemeToggle />
 
           {/* Desktop Contact Button */}
@@ -72,7 +100,7 @@ export function SiteHeader() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="animate-in slide-in-from-top-2 duration-200 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden">
-          <nav className="container flex flex-col space-y-4 py-4">
+          <nav className="container flex flex-col items-end space-y-4 py-4">
             <Link
               href="#features"
               className="text-muted-foreground hover:text-foreground transition-colors duration-200"
@@ -86,6 +114,13 @@ export function SiteHeader() {
               onClick={closeMenu}
             >
               Proceso
+            </Link>
+            <Link
+              href="#faq"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+              onClick={closeMenu}
+            >
+              FAQ
             </Link>
             <Link
               href="#about"
