@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function CTASection() {
   return (
-    <section id="book" className="space-y-4 text-center scroll-mt-20">
+    <section id="book" className="space-y-4 text-center scroll-mt-28">
       <h2 className="text-2xl font-semibold md:text-3xl">
         La IA no es el futuro, es el presente.
       </h2>

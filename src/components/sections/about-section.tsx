@@ -16,7 +16,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="space-y-8 scroll-mt-20 animate-in fade-in duration-700"
+      className="space-y-8 scroll-mt-28 animate-in fade-in duration-700"
     >
       <div className="mx-auto max-w-4xl">
         <h2 className="text-center text-2xl font-semibold md:text-3xl">

@@ -27,25 +27,26 @@
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
-    --border: 216 34% 8%;
-    --input: 216 34% 8%;
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
-    --accent: 222.2 47.4% 11.2%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --ring: 224 76% 48%;
+    /* Luxury Dark Theme - Rich and sophisticated */
+    --background: 222 13% 7%;
+    --foreground: 210 11% 85%;
+    --muted: 222 13% 12%;
+    --muted-foreground: 215 10% 55%;
+    --popover: 222 13% 9%;
+    --popover-foreground: 210 11% 80%;
+    --border: 222 13% 15%;
+    --input: 222 13% 15%;
+    --card: 222 13% 9%;
+    --card-foreground: 210 11% 85%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 13% 9%;
+    --secondary: 222 13% 15%;
+    --secondary-foreground: 210 11% 85%;
+    --accent: 222 13% 18%;
+    --accent-foreground: 210 11% 90%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 11% 95%;
+    --ring: 217 91% 60%;
   }
 
   html {
@@ -69,7 +70,7 @@
   footer {
     transition-property: color, background-color, border-color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 80ms;
+    transition-duration: 300ms;
   }
 
   /* Disable transitions for headings and large text to prevent flicker */
@@ -135,6 +136,25 @@
   [class*="transition-"] {
     transition-property: color, background-color, border-color,
       text-decoration-color, fill, stroke, transform, opacity, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  /* Enhanced smooth transitions for interactive elements */
+  button:hover,
+  a:hover,
+  [role="button"]:hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-duration: 300ms;
+  }
+
+  /* Smooth scale transitions */
+  [class*="hover:scale-"],
+  [class*="group-hover:scale-"] {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-duration: 400ms;
   }
 
   body {
@@ -174,5 +194,148 @@
         transparent 40%
       );
     filter: blur(24px);
+  }
+
+  /* Luxury dark mode gradient */
+  .dark .gradient-blur {
+    background: radial-gradient(
+        800px circle at 0% 0%,
+        rgba(99, 102, 241, 0.08),
+        transparent 50%
+      ),
+      radial-gradient(
+        800px circle at 100% 0%,
+        rgba(139, 92, 246, 0.06),
+        transparent 50%
+      ),
+      radial-gradient(
+        900px circle at 50% 100%,
+        rgba(59, 130, 246, 0.05),
+        transparent 50%
+      );
+    filter: blur(40px);
+  }
+
+  /* Luxury dark mode enhancements */
+  .dark {
+    /* Remove harsh borders and add subtle shadows */
+    --shadow-luxury: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+    --shadow-luxury-lg: 0 10px 40px -4px rgba(0, 0, 0, 0.4);
+    --shadow-luxury-xl: 0 20px 60px -8px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Enhanced luxury shadows for cards and surfaces */
+  .dark [class*="shadow-lg"] {
+    box-shadow: var(--shadow-luxury-lg) !important;
+  }
+
+  .dark [class*="shadow-xl"] {
+    box-shadow: var(--shadow-luxury-xl) !important;
+  }
+
+  /* Remove glow effects for cleaner look */
+
+  /* Premium backdrop blur effects */
+  .dark [class*="backdrop-blur"] {
+    backdrop-filter: blur(20px) saturate(150%);
+  }
+
+  /* Force remove all white borders in dark mode */
+  .dark
+    *[class*="border"]:not([class*="border-none"]):not([class*="border-0"]) {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  /* Specific overrides for common border classes */
+  .dark .border,
+  .dark [class*="border-"],
+  .dark .rounded-xl.border,
+  .dark .rounded-2xl.border {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  /* Remove borders completely from certain elements for cleaner look */
+  .dark .border.bg-card,
+  .dark .border.bg-background {
+    border: none !important;
+    box-shadow: var(--shadow-luxury) !important;
+  }
+
+  /* Specific luxury treatments for key elements */
+  .dark .rounded-xl.border.bg-card,
+  .dark .rounded-2xl.border {
+    border: none !important;
+    box-shadow: var(--shadow-luxury) !important;
+  }
+
+  /* FAQ and feature cards */
+  .dark [class*="rounded-xl"][class*="border"][class*="bg-card"] {
+    border: none !important;
+    box-shadow: var(--shadow-luxury) !important;
+  }
+
+  /* Navbar luxury styling */
+  .dark header [class*="rounded-2xl"][class*="border"] {
+    border: none !important;
+    box-shadow: var(--shadow-luxury-lg) !important;
+  }
+
+  /* Button outline variants */
+  .dark button[class*="border"],
+  .dark a[class*="border"] {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  /* Hero section and main containers */
+  .dark section[class*="border"],
+  .dark div[class*="border"][class*="bg-gradient"] {
+    border: none !important;
+    box-shadow: var(--shadow-luxury) !important;
+  }
+
+  /* Premium button styling for dark mode */
+  .dark button[class*="bg-gradient-to-r"][class*="from-primary"] {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      #4f46e5 50%,
+      #3730a3 100%
+    ) !important;
+    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dark button[class*="bg-gradient-to-r"][class*="from-primary"]:hover {
+    background: linear-gradient(
+      135deg,
+      #5b52e8 0%,
+      #4338ca 50%,
+      #312e81 100%
+    ) !important;
+    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    transform: translateY(-1px) scale(1.015) !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .dark button[class*="bg-gradient-to-r"][class*="from-primary"]:active {
+    transform: translateY(0) scale(0.985) !important;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  /* Premium outline buttons in dark mode */
+  .dark button[class*="border"][class*="border-input"] {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  }
+
+  .dark button[class*="border"][class*="border-input"]:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
 }

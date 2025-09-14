@@ -72,7 +72,7 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="space-y-8 scroll-mt-20 animate-in fade-in duration-700"
+      className="space-y-8 scroll-mt-28 animate-in fade-in duration-700"
     >
       <div className="text-center space-y-4">
         <h2 className="text-2xl font-semibold md:text-3xl">
@@ -91,7 +91,7 @@ export function FAQSection() {
           return (
             <div
               key={index}
-              className="rounded-xl border bg-card transition-all duration-200 hover:shadow-md"
+              className="rounded-xl border bg-card transition-all duration-300 ease-out hover:shadow-md hover:scale-[1.01]"
             >
               <button
                 onClick={(e) => handleClick(index, e)}
@@ -107,8 +107,8 @@ export function FAQSection() {
                   </h3>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 text-muted-foreground transition-transform duration-200 flex-shrink-0",
-                      isOpen && "rotate-180"
+                      "h-5 w-5 text-muted-foreground transition-all duration-300 ease-out flex-shrink-0",
+                      isOpen && "rotate-180 text-foreground"
                     )}
                   />
                 </div>
@@ -117,7 +117,7 @@ export function FAQSection() {
               <div
                 id={`faq-answer-${index}`}
                 className={cn(
-                  "overflow-hidden transition-all duration-200",
+                  "overflow-hidden transition-all duration-400 ease-out",
                   isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 )}
               >

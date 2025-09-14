@@ -20,7 +20,7 @@ export function ProcessSection() {
   return (
     <section
       id="how"
-      className="space-y-8 scroll-mt-20 animate-in fade-in duration-700"
+      className="space-y-8 scroll-mt-28 animate-in fade-in duration-700"
     >
       <h2 className="text-center text-2xl font-semibold md:text-3xl">
         Proceso

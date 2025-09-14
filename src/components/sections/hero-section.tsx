@@ -21,7 +21,10 @@ export function HeroSection() {
             href="https://calendly.com/maximodipaparicio/30min"
             target="_blank"
             rel="noreferrer"
-            className={cn(buttonVariants({}), "w-full sm:w-auto")}
+            className={cn(
+              buttonVariants({}),
+              "w-full sm:w-auto hover:scale-105 active:scale-95"
+            )}
           >
             Agenda una reunión sin costo
           </Link>

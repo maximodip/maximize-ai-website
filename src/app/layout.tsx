@@ -116,7 +116,7 @@ export default function RootLayout({
           <TextCaseProvider>
             <div className="fixed inset-0 -z-10 gradient-blur" aria-hidden />
             <SiteHeader />
-            <div id="home" className="scroll-mt-14" />
+            <div id="home" className="scroll-mt-24" />
             <main className="container px-4 md:px-6">{children}</main>
           </TextCaseProvider>
         </ThemeProvider>
