@@ -15,8 +15,8 @@ export function StructuredData() {
       "Agencia especializada en implementación de soluciones de inteligencia artificial para empresas. Automatización de atención al cliente 24/7 con agentes de IA.",
     founder: {
       "@type": "Person",
-      name: "Máximo Dip",
-      jobTitle: "CEO & AI Solutions Specialist",
+      name: "Maximo Dip Aparicio",
+      jobTitle: "Founder & AI Solutions Specialist",
       url: "https://linkedin.com/in/maximodipaparicio",
     },
     address: {

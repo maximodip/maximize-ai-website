@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const skills = [
   "Machine Learning",
@@ -66,7 +66,7 @@ export function AboutSection() {
                       </div>
                     </div>
                     <h3 className="mt-4 text-lg font-semibold">
-                      Maximo Dip - CEO
+                      Maximo Dip - Founder
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       AI Solutions Specialist
@@ -78,7 +78,7 @@ export function AboutSection() {
                           Disponible para proyectos
                         </span>
                       </div>
-                      <div className="flex justify-center">
+                      <div className="flex justify-center gap-x-2">
                         <Link
                           href="https://linkedin.com/in/maximodipaparicio"
                           target="_blank"
@@ -87,6 +87,15 @@ export function AboutSection() {
                           aria-label="LinkedIn"
                         >
                           <Linkedin className="h-4 w-4" />
+                        </Link>
+                        <Link
+                          href="https://github.com/maximodip"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-gray-50 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-950 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-300"
+                          aria-label="GitHub"
+                        >
+                          <Github className="h-4 w-4" />
                         </Link>
                       </div>
                     </div>
