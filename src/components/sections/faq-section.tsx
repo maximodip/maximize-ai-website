@@ -91,7 +91,7 @@ export function FAQSection() {
           return (
             <div
               key={index}
-              className="rounded-xl border bg-card transition-all duration-300 ease-out hover:shadow-md hover:scale-[1.01]"
+              className="rounded-xl border border-accent/40 bg-card transition-all duration-300 ease-out hover:shadow-lg hover:border-primary/60 hover:scale-[1.01]"
             >
               <button
                 onClick={(e) => handleClick(index, e)}
@@ -141,7 +141,7 @@ export function FAQSection() {
             href="https://calendly.com/maximodipaparicio/30min"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors w-full sm:w-auto"
+            className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary to-accent px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
             tabIndex={0}
           >
             Agenda una consulta gratuita
@@ -150,7 +150,7 @@ export function FAQSection() {
             href="https://wa.me/5493814057449?text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20empresa"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors w-full sm:w-auto"
+            className="inline-flex items-center justify-center rounded-xl border border-primary/40 bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent hover:text-primary-foreground transition-all duration-300 w-full sm:w-auto"
             tabIndex={0}
           >
             Escríbeme por WhatsApp

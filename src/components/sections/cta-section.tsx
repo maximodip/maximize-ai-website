@@ -16,7 +16,10 @@ export function CTASection() {
           href="https://calendly.com/maximodipaparicio/30min"
           target="_blank"
           rel="noreferrer"
-          className={cn(buttonVariants({}), "w-full sm:w-auto")}
+          className={cn(
+            buttonVariants({ variant: "secondary" }),
+            "w-full sm:w-auto"
+          )}
         >
           Agenda una reunión
         </Link>

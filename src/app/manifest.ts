@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Implementamos soluciones de IA que automatizan la atención al cliente 24/7. Agentes inteligentes, CRM y respuestas humanizadas.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#3b82f6",
+    background_color: "#283c66",
+    theme_color: "#1c88a1",
     icons: [
       {
         src: "/favicon-16x16.png",

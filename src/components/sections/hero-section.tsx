@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden rounded-2xl border bg-gradient-to-b from-background to-muted/40 p-8 md:p-12 mt-12 md:mt-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <section className="relative isolate overflow-hidden rounded-2xl border bg-gradient-to-b from-background to-accent p-8 md:p-12 mt-12 md:mt-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="mx-auto max-w-3xl text-center">
         <div className="inline-flex items-center gap-2 rounded-full border bg-background px-3 py-1 text-xs text-muted-foreground">
           <span className="inline-block h-2 w-2 rounded-full bg-green-500" />

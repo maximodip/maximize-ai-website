@@ -29,7 +29,7 @@ export function ProcessSection() {
         {processSteps.map((s) => (
           <div
             key={s.step}
-            className="rounded-xl border bg-card p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+            className="rounded-xl border border-accent/40 bg-card p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/60 hover:-translate-y-1"
           >
             <div className="text-sm font-medium text-muted-foreground">
               {s.step}

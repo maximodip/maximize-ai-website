@@ -8,9 +8,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gradient-to-r from-primary via-primary to-blue-600 text-primary-foreground shadow-lg shadow-primary/25 hover:scale-[1.015] active:scale-[0.985] before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:via-transparent before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-700 before:ease-[cubic-bezier(0.25,0.46,0.45,0.94)]",
+          "bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground shadow-lg shadow-primary/25 hover:scale-[1.015] active:scale-[0.985] before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/25 before:via-transparent before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-700 before:ease-[cubic-bezier(0.25,0.46,0.45,0.94)]",
         secondary:
-          "bg-gradient-to-r from-secondary to-secondary/90 text-secondary-foreground shadow-md hover:scale-[1.015] active:scale-[0.985] transition-all duration-400 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
+          "bg-gradient-to-r from-secondary to-accent text-secondary-foreground shadow-md hover:scale-[1.015] active:scale-[0.985] transition-all duration-400 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
         outline:
           "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground hover:border-accent shadow-sm hover:scale-[1.015] active:scale-[0.985] transition-all duration-400 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
         ghost:

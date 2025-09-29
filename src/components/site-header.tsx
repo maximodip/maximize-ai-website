@@ -242,7 +242,7 @@ export function SiteHeader() {
           >
             {/* Slime background */}
             <div
-              className="absolute top-0 bg-accent/80 rounded-xl pointer-events-none z-0"
+              className="absolute top-0 bg-primary/80 rounded-xl pointer-events-none z-0"
               style={slimeStyle}
             />
 
@@ -317,7 +317,7 @@ export function SiteHeader() {
             >
               {/* Mobile Slime background */}
               <div
-                className="absolute bg-accent/80 rounded-xl pointer-events-none z-0"
+                className="absolute bg-primary/80 rounded-xl pointer-events-none z-0"
                 style={mobileSlimeStyle}
               />
 

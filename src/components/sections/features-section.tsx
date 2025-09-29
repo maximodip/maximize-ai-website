@@ -61,8 +61,8 @@ export function FeaturesSection() {
               key={item.title}
               className="group rounded-xl border bg-card p-6 shadow-sm transition-all duration-400 ease-out hover:shadow-md hover:-translate-y-2 hover:scale-[1.02]"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all duration-300 ease-out group-hover:bg-primary/20 group-hover:scale-110">
-                <Icon className="h-6 w-6 transition-transform duration-300 ease-out group-hover:scale-110" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15 text-primary transition-all duration-300 ease-out group-hover:bg-primary group-hover:text-primary-foreground">
+                <Icon className="h-6 w-6 transition-transform duration-300 ease-out group-hover:scale-105" />
               </div>
               <h3 className="text-lg font-semibold">{item.title}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>

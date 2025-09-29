@@ -57,11 +57,11 @@ export function AboutSection() {
           </div>
           <div className="flex justify-center">
             <div className="relative">
-              <div className="h-80 w-64 rounded-2xl border bg-gradient-to-br from-background to-muted/40 p-1">
+              <div className="h-80 w-64 rounded-2xl border bg-gradient-to-br from-background to-accent p-1">
                 <div className="flex h-full w-full items-center justify-center rounded-xl bg-background">
                   <div className="text-center">
-                    <div className="mx-auto h-24 w-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
-                      <div className="flex h-full w-full items-center justify-center rounded-full bg-background text-2xl font-bold">
+                    <div className="mx-auto h-24 w-24 rounded-full bg-gradient-to-br from-primary to-accent p-1">
+                      <div className="flex h-full w-full items-center justify-center rounded-full bg-background text-2xl font-bold text-primary">
                         MD
                       </div>
                     </div>
@@ -83,7 +83,7 @@ export function AboutSection() {
                           href="https://linkedin.com/in/maximodipaparicio"
                           target="_blank"
                           rel="noreferrer"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-blue-50 text-blue-600 transition-colors hover:bg-blue-100 hover:text-blue-700 dark:bg-blue-950 dark:text-blue-400 dark:hover:bg-blue-900 dark:hover:text-blue-300"
+                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
                           aria-label="LinkedIn"
                         >
                           <Linkedin className="h-4 w-4" />
@@ -92,7 +92,7 @@ export function AboutSection() {
                           href="https://github.com/maximodip"
                           target="_blank"
                           rel="noreferrer"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-gray-50 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-950 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-300"
+                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-accent/20 text-foreground transition-colors hover:bg-accent hover:text-foreground"
                           aria-label="GitHub"
                         >
                           <Github className="h-4 w-4" />
