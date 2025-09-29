@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   },
   description:
     "Implementamos soluciones de inteligencia artificial que automatizan la atención al cliente 24/7. Agentes de IA, CRM inteligente y respuestas humanizadas que aumentan ventas y reducen costos operativos.",
+  manifest: "/site.webmanifest",
   keywords: [
     "inteligencia artificial empresas",
     "automatización atención cliente",
@@ -81,6 +82,30 @@ export const metadata: Metadata = {
     google: "google-site-verification-code-here",
     yandex: "yandex-verification-code-here",
     yahoo: "yahoo-site-verification-code-here",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "android-chrome",
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        rel: "android-chrome",
+        url: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
   },
   alternates: {
     canonical: "https://maximizeia.com",
