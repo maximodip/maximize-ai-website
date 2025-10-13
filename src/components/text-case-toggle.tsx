@@ -4,16 +4,22 @@ import { useTextCase } from "@/components/text-case-provider";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
-export function TextCaseToggle() {
+export const TextCaseToggle = () => {
   const { isUppercase, toggleCase } = useTextCase();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    // Remove focus after click to avoid visual focus state on mobile
     event.currentTarget.blur();
     toggleCase();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleCase();
+    }
   };
 
   useEffect(() => {
@@ -46,6 +52,7 @@ export function TextCaseToggle() {
       size="icon"
       aria-label="Cambiar caso de texto"
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
       title={isUppercase ? "Cambiar a minúsculas" : "Cambiar a mayúsculas"}
     >
       <span className={`text-xs font-bold ${isUppercase ? "uppercase" : ""}`}>
@@ -53,4 +60,4 @@ export function TextCaseToggle() {
       </span>
     </Button>
   );
-}
+};

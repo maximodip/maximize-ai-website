@@ -2,15 +2,30 @@ import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { Pinecone } from "@pinecone-database/pinecone";
 
+// Validate environment variables
+if (!process.env.OPENAI_API_KEY) {
+  throw new Error("Missing OPENAI_API_KEY environment variable");
+}
+
+if (!process.env.PINECONE_API_KEY) {
+  throw new Error("Missing PINECONE_API_KEY environment variable");
+}
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 const pinecone = new Pinecone({
-  apiKey: process.env.PINECONE_API_KEY!,
+  apiKey: process.env.PINECONE_API_KEY,
 });
 
 const index = pinecone.index("agentemaximodip");
+
+interface PineconeMetadata {
+  text?: string;
+  content?: string;
+  chunk?: string;
+}
 
 async function getRelevantContext(query: string): Promise<string> {
   try {
@@ -35,23 +50,10 @@ async function getRelevantContext(query: string): Promise<string> {
       searchResponse.matches
         ?.filter((match) => match.score && match.score > 0.3)
         .map((match) => {
-          // Debug log para ver la estructura
-          console.log(
-            "Match metadata:",
-            JSON.stringify(match.metadata, null, 2)
-          );
-          console.log("Match score:", match.score);
-
-          // Intentar diferentes formas de acceder al texto
-          const metadata = match.metadata as any;
+          const metadata = match.metadata as PineconeMetadata;
           return metadata?.text || metadata?.content || metadata?.chunk || "";
         })
         .filter((text) => typeof text === "string" && text.length > 0) || [];
-
-    // Debug final
-    console.log("Final contexts array:", contexts);
-    console.log("Contexts length:", contexts.length);
-    console.log("Joined context:", contexts.join("\n\n"));
 
     return contexts.join("\n\n");
   } catch (error) {
@@ -100,16 +102,6 @@ export async function POST(request: NextRequest) {
 
     // Buscar contexto relevante en Pinecone
     const relevantContext = await getRelevantContext(userQuery);
-
-    // Debug logging (remover en producción)
-    console.log("User query:", userQuery);
-    console.log("Context found:", relevantContext ? "YES" : "NO");
-    console.log("Context length:", relevantContext.length);
-    console.log("Full context being sent to model:", relevantContext);
-    console.log(
-      "System prompt preview:",
-      getSystemPrompt(relevantContext).substring(0, 500) + "..."
-    );
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",

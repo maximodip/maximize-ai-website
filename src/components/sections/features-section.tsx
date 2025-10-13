@@ -34,25 +34,21 @@ const features = [
     icon: Server,
   },
   {
-    title: "Canales: WhatsApp, Instagram, Facebook",
+    title: "Canales: WhatsApp, Instagram, Facebook, Web",
     desc: "Integra donde está tu audiencia.",
     icon: Smartphone,
   },
 ];
 
-export function FeaturesSection() {
+export const FeaturesSection = () => {
   return (
     <section
       id="features"
       className="space-y-8 scroll-mt-28 animate-in fade-in duration-700"
     >
       <h2 className="text-center text-2xl font-semibold md:text-3xl">
-        Infraestructura de Atención al Cliente con IA
+        Infraestructura de Inteligencia Artificial
       </h2>
-      <p className="mx-auto max-w-2xl text-center text-muted-foreground">
-        Todo lo necesario para automatizar al 100% la atención: agentes
-        autónomos, seguimiento inteligente y control total desde tu CRM.
-      </p>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((item) => {
           const Icon = item.icon;
@@ -77,4 +73,4 @@ export function FeaturesSection() {
       </div>
     </section>
   );
-}
+};

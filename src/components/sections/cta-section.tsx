@@ -1,8 +1,8 @@
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export function CTASection() {
+export const CTASection = () => {
   return (
     <section id="book" className="space-y-4 text-center scroll-mt-28">
       <h2 className="text-2xl font-semibold md:text-3xl">
@@ -29,4 +29,4 @@ export function CTASection() {
       </p>
     </section>
   );
-}
+};

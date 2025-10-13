@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Github, Linkedin } from "lucide-react";
 
@@ -12,7 +14,7 @@ const skills = [
   "Cloud",
 ];
 
-export function AboutSection() {
+export const AboutSection = () => {
   return (
     <section
       id="about"
@@ -66,7 +68,7 @@ export function AboutSection() {
                       </div>
                     </div>
                     <h3 className="mt-4 text-lg font-semibold">
-                      Maximo Dip - Founder
+                      Máximo Dip - Founder
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       AI Solutions Specialist
@@ -83,8 +85,18 @@ export function AboutSection() {
                           href="https://linkedin.com/in/maximodipaparicio"
                           target="_blank"
                           rel="noreferrer"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-                          aria-label="LinkedIn"
+                          tabIndex={0}
+                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                          aria-label="Visitar perfil de LinkedIn"
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              window.open(
+                                "https://linkedin.com/in/maximodipaparicio",
+                                "_blank"
+                              );
+                            }
+                          }}
                         >
                           <Linkedin className="h-4 w-4" />
                         </Link>
@@ -92,8 +104,18 @@ export function AboutSection() {
                           href="https://github.com/maximodip"
                           target="_blank"
                           rel="noreferrer"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-accent/20 text-foreground transition-colors hover:bg-accent hover:text-foreground"
-                          aria-label="GitHub"
+                          tabIndex={0}
+                          className="flex h-8 w-8 items-center justify-center rounded-full border bg-accent/20 text-foreground transition-colors hover:bg-accent hover:text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                          aria-label="Visitar perfil de GitHub"
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              window.open(
+                                "https://github.com/maximodip",
+                                "_blank"
+                              );
+                            }
+                          }}
                         >
                           <Github className="h-4 w-4" />
                         </Link>
@@ -108,4 +130,4 @@ export function AboutSection() {
       </div>
     </section>
   );
-}
+};

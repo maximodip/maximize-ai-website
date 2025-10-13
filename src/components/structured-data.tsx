@@ -1,4 +1,4 @@
-export function StructuredData() {
+export const StructuredData = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -15,7 +15,7 @@ export function StructuredData() {
       "Agencia especializada en implementación de soluciones de inteligencia artificial para empresas. Automatización de atención al cliente 24/7 con agentes de IA.",
     founder: {
       "@type": "Person",
-      name: "Maximo Dip Aparicio",
+      name: "Máximo Dip Aparicio",
       jobTitle: "Founder & AI Solutions Specialist",
       url: "https://linkedin.com/in/maximodipaparicio",
     },
@@ -198,4 +198,4 @@ export function StructuredData() {
       />
     </>
   );
-}
+};

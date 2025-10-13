@@ -8,7 +8,18 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { TextCaseToggle } from "@/components/text-case-toggle";
 import { useTextCase } from "@/components/text-case-provider";
 
-export function SiteHeader() {
+// Constants
+const SCROLL_TOP_THRESHOLD = 100;
+const INTERSECTION_ROOT_MARGIN = "-20% 0px -60% 0px";
+const INTERSECTION_THRESHOLD = 0.1;
+const RESIZE_DEBOUNCE_DELAY = 100;
+const ROUTE_CHANGE_DELAY = 100;
+const ANIMATION_COMPLETE_DELAY = 2000;
+const SLIME_POSITION_DELAY = 50;
+const SLIME_TRANSITION_FAST = "all 0.2s ease-out";
+const SLIME_TRANSITION_BOUNCE = "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)";
+
+export const SiteHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const [slimeStyle, setSlimeStyle] = useState<React.CSSProperties>({});
@@ -21,8 +32,30 @@ export function SiteHeader() {
   const mobileNavRef = useRef<HTMLDivElement>(null);
   const { isUppercase } = useTextCase();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const handleToggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const handleCloseMenu = () => setIsMenuOpen(false);
+
+  const handleMenuKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleToggleMenu();
+    }
+  };
+
+  const handleLogoClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    setIsAnimatingToHome(true);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => {
+      setIsAnimatingToHome(false);
+    }, ANIMATION_COMPLETE_DELAY);
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -60,7 +93,7 @@ export function SiteHeader() {
         const scrollTop =
           window.pageYOffset || document.documentElement.scrollTop;
 
-        if (scrollTop <= 100) {
+        if (scrollTop <= SCROLL_TOP_THRESHOLD) {
           // If we're at the top, clear any selection
           setActiveSection("");
           return;
@@ -73,8 +106,8 @@ export function SiteHeader() {
         });
       },
       {
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: 0.1,
+        rootMargin: INTERSECTION_ROOT_MARGIN,
+        threshold: INTERSECTION_THRESHOLD,
       }
     );
 
@@ -82,17 +115,20 @@ export function SiteHeader() {
 
     // Listen for route changes
     const handleRouteChange = () => {
-      setTimeout(checkHomePage, 100); // Small delay to ensure DOM is ready
+      setTimeout(checkHomePage, ROUTE_CHANGE_DELAY);
     };
 
-    // Add scroll listener to clear selection when at top
+    // Add debounced scroll listener to clear selection when at top
+    let scrollTimeout: NodeJS.Timeout;
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop <= 100) {
-        // Clear selection when close to top
-        setActiveSection("");
-      }
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop <= SCROLL_TOP_THRESHOLD) {
+          setActiveSection("");
+        }
+      }, 50); // Debounce scroll events
     };
 
     window.addEventListener("popstate", handleRouteChange);
@@ -100,6 +136,7 @@ export function SiteHeader() {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
+      clearTimeout(scrollTimeout);
       sections.forEach((section) => observer.unobserve(section));
       window.removeEventListener("popstate", handleRouteChange);
       window.removeEventListener("hashchange", handleRouteChange);
@@ -111,8 +148,8 @@ export function SiteHeader() {
   useEffect(() => {
     // When animating to home, use faster transitions for natural scroll sync
     const transitionSpeed = isAnimatingToHome
-      ? "all 0.2s ease-out"
-      : "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)";
+      ? SLIME_TRANSITION_FAST
+      : SLIME_TRANSITION_BOUNCE;
 
     const updateSlimePosition = () => {
       // Desktop slime
@@ -168,17 +205,20 @@ export function SiteHeader() {
     // Update slime position immediately and on window resize
     updateSlimePosition();
 
+    let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-      setTimeout(updateSlimePosition, 100);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(updateSlimePosition, RESIZE_DEBOUNCE_DELAY);
     };
 
     window.addEventListener("resize", handleResize);
 
     // Small delay to ensure DOM is ready for initial calculation
-    const timer = setTimeout(updateSlimePosition, 50);
+    const timer = setTimeout(updateSlimePosition, SLIME_POSITION_DELAY);
 
     return () => {
       clearTimeout(timer);
+      clearTimeout(resizeTimeout);
       window.removeEventListener("resize", handleResize);
     };
   }, [activeSection, isMenuOpen, isUppercase, isAnimatingToHome]);
@@ -213,23 +253,7 @@ export function SiteHeader() {
             <Link
               href="/"
               className="flex items-center gap-2 font-semibold"
-              onClick={async (e) => {
-                e.preventDefault();
-
-                // Set animation flag to let intersection observer handle slime movement
-                setIsAnimatingToHome(true);
-
-                // Scroll to top and let intersection observer move the slime naturally
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                });
-
-                // Clear animation flag after scroll completes
-                setTimeout(() => {
-                  setIsAnimatingToHome(false);
-                }, 2000); // Give enough time for scroll to complete
-              }}
+              onClick={handleLogoClick}
             >
               <span>Maximize IA</span>
             </Link>
@@ -293,9 +317,11 @@ export function SiteHeader() {
 
             {/* Mobile Menu Button */}
             <button
-              onClick={toggleMenu}
+              onClick={handleToggleMenu}
+              onKeyDown={handleMenuKeyDown}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300 ease-out hover:scale-105 active:scale-95 md:hidden"
               aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
                 <X className="h-5 w-5 transition-transform duration-200 rotate-90" />
@@ -325,7 +351,7 @@ export function SiteHeader() {
                 href="/#features"
                 className={getMobileNavLinkClasses("features")}
                 data-section="features"
-                onClick={closeMenu}
+                onClick={handleCloseMenu}
               >
                 Servicios
               </Link>
@@ -333,7 +359,7 @@ export function SiteHeader() {
                 href="/#how"
                 className={getMobileNavLinkClasses("how")}
                 data-section="how"
-                onClick={closeMenu}
+                onClick={handleCloseMenu}
               >
                 Proceso
               </Link>
@@ -341,7 +367,7 @@ export function SiteHeader() {
                 href="/#faq"
                 className={getMobileNavLinkClasses("faq")}
                 data-section="faq"
-                onClick={closeMenu}
+                onClick={handleCloseMenu}
               >
                 FAQ
               </Link>
@@ -349,7 +375,7 @@ export function SiteHeader() {
                 href="/#about"
                 className={getMobileNavLinkClasses("about")}
                 data-section="about"
-                onClick={closeMenu}
+                onClick={handleCloseMenu}
               >
                 Quién soy
               </Link>
@@ -359,7 +385,7 @@ export function SiteHeader() {
                   buttonVariants(),
                   "w-fit h-10 px-6 mt-2 relative z-10"
                 )}
-                onClick={closeMenu}
+                onClick={handleCloseMenu}
               >
                 Contacto
               </Link>
@@ -369,4 +395,4 @@ export function SiteHeader() {
       )}
     </header>
   );
-}
+};

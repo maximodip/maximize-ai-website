@@ -9,7 +9,7 @@ const faqs = [
     question:
       "¿Cuánto tiempo toma implementar una solución de IA en mi empresa?",
     answer:
-      "El tiempo de implementación varía según la complejidad, pero típicamente entre 2-4 semanas para una solución básica de atención al cliente. Esto incluye el análisis inicial, configuración del agente, entrenamiento con datos específicos de tu negocio y pruebas antes del lanzamiento.",
+      "El tiempo de implementación varía según la complejidad, pero típicamente de 3 a 5 semanas para una solución básica de IA. Esto incluye el análisis inicial, configuración del agente, entrenamiento con datos específicos de tu negocio y pruebas antes del lanzamiento.",
   },
   {
     question: "¿Qué tan costoso es mantener un sistema de IA?",
@@ -49,7 +49,7 @@ const faqs = [
   },
 ];
 
-export function FAQSection() {
+export const FAQSection = () => {
   const [openItem, setOpenItem] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -159,4 +159,4 @@ export function FAQSection() {
       </div>
     </section>
   );
-}
+};

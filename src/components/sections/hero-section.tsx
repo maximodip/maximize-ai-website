@@ -2,7 +2,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export function HeroSection() {
+export const HeroSection = () => {
   return (
     <section className="relative isolate overflow-hidden rounded-2xl border bg-gradient-to-b from-background to-accent p-8 md:p-12 mt-12 md:mt-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div className="mx-auto max-w-3xl text-center">
@@ -44,4 +44,4 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-x-0 -bottom-10 h-20 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
-}
+};

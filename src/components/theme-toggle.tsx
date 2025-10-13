@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function ThemeToggle() {
+export const ThemeToggle = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -21,15 +21,25 @@ export function ThemeToggle() {
 
   const isDark = resolvedTheme === "dark";
 
+  const handleClick = () => setTheme(isDark ? "light" : "dark");
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleClick();
+    }
+  };
+
   return (
     <Button
       variant="outline"
       size="icon"
       aria-label="Cambiar tema"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
       title={isDark ? "Cambiar a claro" : "Cambiar a oscuro"}
     >
       {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
     </Button>
   );
-}
+};
