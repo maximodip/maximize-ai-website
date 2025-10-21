@@ -11,7 +11,7 @@ export const HeroSection = () => {
           Disponible
         </div>
         <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-relaxed bg-gradient-to-b from-primary to-primary/60 bg-clip-text text-transparent pb-2">
-          Soluciones con IA para tu empresa.
+          Soluciones con IA para tu Negocio.
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
           Usa tu tiempo para crecer, no para atender.

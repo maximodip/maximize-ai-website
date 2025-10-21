@@ -33,6 +33,17 @@ const faqs = [
       "Absolutamente. Ofrecemos implementación on-premise para máxima seguridad, donde todos los datos permanecen en tus servidores. Para soluciones en la nube, utilizamos encriptación de extremo a extremo y cumplimos con estándares internacionales de seguridad.",
   },
   {
+    question: "¿Cómo puedo integrar una Infraestructura de IA con mi CRM?",
+    answer:
+      "Nuestras soluciones se integran con los principales sistemas de CRM, como Salesforce, HubSpot, Zendesk y muchas más. También podemos integrar con tu propio sistema de CRM si lo necesitas.",
+  },
+  {
+    question:
+      "¿Qué tengo que hacer para que mi Infraestructura de IA funcione correctamente?",
+    answer:
+      "Solamente llenando un formulario con los datos de tu negocio y tus expectativas, y nosotros nos encargamos de la implementación.",
+  },
+  {
     question: "¿Necesito conocimientos técnicos para usar el sistema?",
     answer:
       "No. Diseñamos interfaces intuitivas que cualquier persona puede usar. Incluimos capacitación completa para tu equipo y documentación detallada. El sistema está pensado para que puedas enfocarte en tu negocio, no en la tecnología.",
