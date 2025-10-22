@@ -39,7 +39,7 @@ export const HeroSection = () => {
             rel="noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "group w-full sm:w-auto"
+              "group w-full sm:w-auto",
             )}
           >
             <span className="inline-flex items-center gap-2">
@@ -51,12 +51,12 @@ export const HeroSection = () => {
             </span>
           </Link>
           <Link
-            href="https://api.whatsapp.com/send?phone=5493816708372&text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20empresa"
+            href="https://api.whatsapp.com/send?phone=5493816708372&text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20negocio"
             target="_blank"
             rel="noreferrer"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "group w-full border-primary/40 text-primary transition-colors hover:border-primary hover:bg-primary/10 sm:w-auto"
+              "group w-full border-primary/40 text-primary transition-colors hover:border-primary hover:bg-primary/10 sm:w-auto",
             )}
           >
             <span className="inline-flex items-center gap-2">
@@ -89,7 +89,7 @@ export const HeroSection = () => {
               Acompañamiento
             </p>
             <p className="text-lg font-semibold">
-              Chat 1:1 durante la implementación
+              Chat 1:1 durante el desarrollo
             </p>
           </div>
         </div>
