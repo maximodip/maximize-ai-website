@@ -11,24 +11,29 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     default:
-      "Maximize IA - Automatización con IA para Empresas | Agentes Inteligentes 24/7",
+      "Maximize IA - Infraestructura de IA para Empresas | Automatización Inteligente",
     template: "%s | Maximize IA",
   },
   description:
-    "Implementamos soluciones de inteligencia artificial que automatizan la atención al cliente 24/7. Agentes de IA, CRM inteligente y respuestas humanizadas que aumentan ventas y reducen costos operativos.",
+    "Infraestructura completa de inteligencia artificial para empresas. Agentes de atención al cliente 24/7, RAG con hasta 1000 hojas de documentación, e-commerce inteligente hasta 50.000 productos y automatizaciones personalizadas. WhatsApp, Instagram y Facebook.",
   manifest: "/site.webmanifest",
   keywords: [
-    "inteligencia artificial empresas",
-    "automatización atención cliente",
-    "agentes IA 24/7",
-    "chatbots empresariales",
-    "CRM inteligente",
-    "implementación IA",
-    "soluciones IA empresas",
+    "infraestructura inteligencia artificial",
+    "agente IA atención cliente",
+    "RAG información empresarial",
+    "agente ecommerce IA",
     "automatización WhatsApp",
-    "respuestas automáticas IA",
-    "reducir costos atención cliente",
-    "aumentar ventas IA",
+    "automatización Instagram",
+    "automatización Facebook",
+    "seguimientos automáticos",
+    "filtrado leads IA",
+    "notificaciones automáticas email",
+    "chatbot 24/7",
+    "base conocimiento empresarial",
+    "recomendaciones productos IA",
+    "workflows personalizados",
+    "implementación IA empresas",
+    "soluciones IA escalables",
     "transformación digital IA",
   ],
   authors: [
@@ -46,24 +51,24 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://maximizeia.com",
     title:
-      "Maximize IA - Automatización con IA para Empresas | Agentes Inteligentes 24/7",
+      "Maximize IA - Infraestructura de IA para Empresas | Automatización Inteligente",
     description:
-      "Implementamos soluciones de inteligencia artificial que automatizan la atención al cliente 24/7. Agentes de IA, CRM inteligente y respuestas humanizadas que aumentan ventas y reducen costos operativos.",
+      "Infraestructura completa de IA: Agentes 24/7, RAG hasta 1000 hojas, e-commerce 50.000 productos, automatizaciones personalizadas. WhatsApp, Instagram, Facebook.",
     siteName: "Maximize IA",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Maximize IA - Soluciones de Inteligencia Artificial para Empresas",
+        alt: "Maximize IA - Infraestructura de Inteligencia Artificial para Empresas",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maximize IA - Automatización con IA para Empresas",
+    title: "Maximize IA - Infraestructura de IA para Empresas",
     description:
-      "Implementamos soluciones de IA que automatizan la atención al cliente 24/7. Aumenta ventas y reduce costos con agentes inteligentes.",
+      "Infraestructura completa de IA: Agentes 24/7, RAG hasta 1000 hojas, e-commerce 50.000 productos. WhatsApp, Instagram, Facebook.",
     creator: "@maximodip",
     images: ["/og-image.jpg"],
   },

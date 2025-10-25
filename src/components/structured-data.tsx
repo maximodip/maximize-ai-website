@@ -12,11 +12,11 @@ export const StructuredData = () => {
       height: 100,
     },
     description:
-      "Agencia especializada en implementación de soluciones de inteligencia artificial para empresas. Automatización de atención al cliente 24/7 con agentes de IA.",
+      "Infraestructura completa de inteligencia artificial para empresas. Agentes de atención al cliente 24/7, RAG con documentación empresarial, e-commerce inteligente y automatizaciones personalizadas.",
     founder: {
       "@type": "Person",
       name: "Máximo Dip Aparicio",
-      jobTitle: "Founder & AI Solutions Specialist",
+      jobTitle: "Founder & AI Infrastructure Specialist",
       url: "https://linkedin.com/in/maximodipaparicio",
     },
     address: {
@@ -26,13 +26,13 @@ export const StructuredData = () => {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+5493814057449",
+      telephone: "+5493816708372",
       contactType: "customer service",
       availableLanguage: ["Spanish", "English"],
     },
     sameAs: [
       "https://linkedin.com/in/maximodipaparicio",
-      "https://wa.me/5493814057449",
+      "https://wa.me/5493816708372",
     ],
     serviceArea: {
       "@type": "Place",
@@ -43,46 +43,56 @@ export const StructuredData = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Implementación de Soluciones de Inteligencia Artificial",
+    name: "Infraestructura de Inteligencia Artificial para Empresas",
     description:
-      "Automatización completa de atención al cliente con agentes de IA 24/7, CRM inteligente y respuestas humanizadas.",
+      "Infraestructura completa y modular de IA con agentes de atención al cliente 24/7, RAG para información empresarial, e-commerce inteligente y automatizaciones personalizadas.",
     provider: {
       "@type": "Organization",
       name: "Maximize IA",
     },
-    serviceType: "Artificial Intelligence Implementation",
+    serviceType: "Artificial Intelligence Infrastructure",
     areaServed: {
       "@type": "Place",
       name: "América Latina",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Servicios de IA",
+      name: "Infraestructura de IA",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Agente de IA Autónomo",
-            description: "Resuelve consultas y tareas sin intervención, 24/7",
+            name: "Agente de atención al cliente",
+            description:
+              "Atención 24/7 con seguimientos automáticos cada 6 y 23 horas. WhatsApp, Instagram y Facebook.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Agente IA para Seguimientos",
+            name: "Agente RAG con información empresarial",
             description:
-              "Nutre leads y retiene clientes con mensajes oportunos",
+              "Acceso y procesamiento de hasta 1000 hojas de documentación empresarial para respuestas precisas.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Implementación On-Premise",
+            name: "Agente e-commerce inteligente",
             description:
-              "Despliegue en tus propios servidores para máxima seguridad",
+              "Gestión hasta 50.000 productos con información detallada y recomendaciones personalizadas.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Automatizaciones personalizadas",
+            description:
+              "Notificaciones por email, filtrado de leads, workflows personalizados según las necesidades del negocio.",
           },
         },
       ],
@@ -95,7 +105,7 @@ export const StructuredData = () => {
     name: "Maximize IA",
     url: "https://maximizeia.com",
     description:
-      "Soluciones de inteligencia artificial para empresas. Automatización de atención al cliente 24/7.",
+      "Infraestructura de inteligencia artificial para empresas. Agentes 24/7, RAG, e-commerce y automatizaciones personalizadas.",
     inLanguage: "es-ES",
     isPartOf: {
       "@type": "WebSite",
@@ -103,7 +113,7 @@ export const StructuredData = () => {
     },
     about: {
       "@type": "Thing",
-      name: "Inteligencia Artificial para Empresas",
+      name: "Infraestructura de Inteligencia Artificial para Empresas",
     },
     potentialAction: {
       "@type": "SearchAction",
@@ -156,20 +166,20 @@ export const StructuredData = () => {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Servicios",
-        item: "https://maximizeia.com#features",
+        name: "Política de Privacidad",
+        item: "https://maximizeia.com/privacy",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: "Proceso",
-        item: "https://maximizeia.com#how",
+        name: "Términos de Servicio",
+        item: "https://maximizeia.com/terms",
       },
       {
         "@type": "ListItem",
         position: 4,
-        name: "FAQ",
-        item: "https://maximizeia.com#faq",
+        name: "Aviso Legal",
+        item: "https://maximizeia.com/legal",
       },
     ],
   };
