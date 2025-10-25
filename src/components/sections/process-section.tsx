@@ -2,7 +2,7 @@ const processSteps = [
   {
     step: "00",
     title: "Descubrir",
-    desc: "Entender oportunidades concretas para aumentar ventas/ahorrar tiempo.",
+    desc: "Entender oportunidades concretas para implementar soluciones de IA en tu negocio.",
   },
   {
     step: "01",
@@ -12,17 +12,22 @@ const processSteps = [
   {
     step: "02",
     title: "Diseñar",
-    desc: "Asegurar que el prototipo se ajuste al negocio real.",
+    desc: "Diseñar la solución de IA que se ajuste a tus necesidades.",
   },
   {
     step: "03",
     title: "Desarrollar",
-    desc: "Implementar la solución con las mejores prácticas y tecnologías.",
+    desc: "Desarrollar la solución de IA que se ajuste a tus necesidades y que sea escalable y mantenible.",
   },
   {
     step: "04",
     title: "Desplegar",
-    desc: "Garantizar que el sistema sea escalable y con soporte continuo.",
+    desc: "Desplegar la solución de IA en tu negocio para que puedas empezar a ver resultados.",
+  },
+  {
+    step: "05",
+    title: "Optimizar",
+    desc: "Optimizar la solución de IA para que sea más eficiente y efectiva.",
   },
 ];
 
@@ -54,7 +59,7 @@ export const ProcessSection = () => {
 
         {/* Segunda fila - Cards 03 y 04 centradas */}
         <div className="flex flex-wrap justify-center gap-6">
-          {processSteps.slice(3, 5).map((s) => (
+          {processSteps.slice(3, 6).map((s) => (
             <div
               key={s.step}
               className="w-full md:w-[calc(33.333%-1rem)] md:max-w-[320px] rounded-xl border border-accent/40 bg-card p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/60 hover:-translate-y-1"
