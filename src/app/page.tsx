@@ -16,7 +16,6 @@ export default function HomePage() {
       <ProcessSection />
       <FAQSection />
       <AboutSection />
-      <CTASection />
       <Footer />
     </div>
   );

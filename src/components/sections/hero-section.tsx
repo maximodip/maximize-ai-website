@@ -43,7 +43,7 @@ export const HeroSection = () => {
             )}
           >
             <span className="inline-flex items-center gap-2">
-              Agenda una reunión sin costo
+              Agenda una llamada sin costo
               <ArrowRight
                 className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                 aria-hidden="true"

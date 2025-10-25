@@ -338,12 +338,13 @@ export const SiteHeader = () => {
 
             {/* Desktop Contact Button */}
             <Link
-              href="/#book"
+              href="https://api.whatsapp.com/send?phone=5493816708372&text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20negocio"
+              target="_blank"
+              rel="noreferrer"
               className={cn(
                 buttonVariants(),
                 "hidden md:inline-flex h-10 px-6"
               )}
-              onClick={(e) => handleNavClick(e, "book")}
             >
               Contacto
             </Link>

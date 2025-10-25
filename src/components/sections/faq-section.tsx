@@ -48,16 +48,6 @@ const faqs = [
     answer:
       "No. Diseñamos interfaces intuitivas que cualquier persona puede usar. Incluimos capacitación completa para tu equipo y documentación detallada. El sistema está pensado para que puedas enfocarte en tu negocio, no en la tecnología.",
   },
-  {
-    question: "¿Cómo mido el retorno de inversión (ROI) de implementar IA?",
-    answer:
-      "Proporcionamos dashboards con métricas clave: reducción en tiempo de respuesta, aumento en satisfacción del cliente, ahorro en costos operativos y conversión de leads. La mayoría de clientes ve mejoras medibles en las primeras semanas.",
-  },
-  {
-    question: "¿Qué pasa si mi negocio crece y necesito más capacidad?",
-    answer:
-      "Nuestras soluciones son completamente escalables. Pueden manejar desde cientos hasta millones de conversaciones sin degradar el rendimiento. El sistema se adapta automáticamente al crecimiento de tu negocio sin intervención manual.",
-  },
 ];
 
 export const FAQSection = () => {
@@ -152,13 +142,13 @@ export const FAQSection = () => {
             href="https://calendly.com/maximodipaparicio/30min"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-primary to-accent px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
+            className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all duration-300 w-full sm:w-auto group"
             tabIndex={0}
           >
-            Agenda una consulta gratuita
+            Agenda una llamada sin costo
           </a>
           <a
-            href="https://wa.me/5493814057449?text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20empresa"
+            href="https://api.whatsapp.com/send?phone=5493816708372&text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20negocio"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-xl border border-primary/40 bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent hover:text-primary-foreground transition-all duration-300 w-full sm:w-auto"
