@@ -6,26 +6,26 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section className="relative isolate mt-12 rounded-3xl border border-border/60 bg-gradient-to-br from-background via-background to-primary/5 px-6 py-12 shadow-sm md:mt-16 md:px-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.08),_transparent_55%)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom,_rgba(16,185,129,0.05),_transparent_45%)]" />
+    <section className="relative isolate mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-background via-background to-primary/5 px-4 py-10 shadow-sm md:mt-16 md:rounded-3xl md:px-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.08),_transparent_55%)] md:rounded-3xl" />
+      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_bottom,_rgba(16,185,129,0.05),_transparent_45%)] md:rounded-3xl" />
 
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-12 text-center">
-        <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1 font-medium text-primary">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 text-center md:gap-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 text-sm sm:gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary sm:px-4 sm:text-sm">
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
             Disponibilidad inmediata
           </span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-muted/60 bg-muted/20 px-4 py-1 text-muted-foreground">
+          <span className="inline-flex items-center gap-2 rounded-full border border-muted/60 bg-muted/20 px-3 py-1 text-xs text-muted-foreground sm:px-4 sm:text-sm">
             Experiencia comprobada en IA comercial
           </span>
         </div>
 
-        <div className="space-y-6">
-          <h1 className="text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+        <div className="space-y-4 md:space-y-6">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
             Despliega soluciones de IA que aceleran tus resultados
           </h1>
-          <p className="mx-auto max-w-3xl text-balance text-lg text-muted-foreground md:text-xl">
+          <p className="mx-auto max-w-3xl text-balance text-base text-muted-foreground sm:text-lg md:text-xl">
             Construimos e integramos asistentes, automatizaciones y analítica
             inteligente para que tu equipo se concentre en lo que más importa:
             crecer.
@@ -39,7 +39,7 @@ export const HeroSection = () => {
             rel="noreferrer"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "group w-full sm:w-auto",
+              "group w-full sm:w-auto"
             )}
           >
             <span className="inline-flex items-center gap-2">
@@ -56,7 +56,7 @@ export const HeroSection = () => {
             rel="noreferrer"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "group w-full border-primary/40 text-primary transition-colors hover:border-primary hover:bg-primary/10 sm:w-auto",
+              "group w-full border-primary/40 text-primary transition-colors hover:border-primary hover:bg-primary/10 sm:w-auto"
             )}
           >
             <span className="inline-flex items-center gap-2">
@@ -69,18 +69,18 @@ export const HeroSection = () => {
           </Link>
         </div>
 
-        <div className="grid w-full gap-4 rounded-2xl border border-border/50 bg-background/80 p-6 text-left sm:grid-cols-3">
-          <div className="space-y-1">
+        <div className="grid w-full gap-4 rounded-xl border border-border/50 bg-background/80 p-4 text-left sm:grid-cols-3 sm:rounded-2xl sm:p-6">
+          <div className="space-y-1 border-b border-border/30 pb-4 sm:border-b-0 sm:border-r sm:pb-0 sm:pr-4 last:border-0">
             <p className="text-xs uppercase tracking-wide text-muted-foreground">
               Tiempo de implementación
             </p>
-            <p className="text-lg font-semibold">3-5 semanas</p>
+            <p className="text-base font-semibold sm:text-lg">3-5 semanas</p>
           </div>
-          <div className="space-y-1">
+          <div className="space-y-1 border-b border-border/30 pb-4 sm:border-b-0 sm:border-r sm:pb-0 sm:px-4 last:border-0">
             <p className="text-xs uppercase tracking-wide text-muted-foreground">
               Casos de uso cubiertos
             </p>
-            <p className="text-lg font-semibold">
+            <p className="text-base font-semibold sm:text-lg">
               Ventas, soporte, operaciones
             </p>
           </div>
@@ -88,7 +88,7 @@ export const HeroSection = () => {
             <p className="text-xs uppercase tracking-wide text-muted-foreground">
               Acompañamiento
             </p>
-            <p className="text-lg font-semibold">
+            <p className="text-base font-semibold sm:text-lg">
               Chat 1:1 durante el desarrollo
             </p>
           </div>

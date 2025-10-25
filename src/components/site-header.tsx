@@ -47,6 +47,13 @@ export const SiteHeader = () => {
 
     setIsAnimatingToHome(true);
 
+    // Check if we're not on the home page
+    if (window.location.pathname !== "/") {
+      // Navigate to home page first
+      window.location.href = "/";
+      return;
+    }
+
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -55,6 +62,27 @@ export const SiteHeader = () => {
     setTimeout(() => {
       setIsAnimatingToHome(false);
     }, ANIMATION_COMPLETE_DELAY);
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    handleCloseMenu();
+
+    // Check if we're not on the home page
+    if (window.location.pathname !== "/") {
+      // Navigate to home page with the hash
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+
+    // If we're on the home page, scroll to the section
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   // Close menu when clicking outside
@@ -274,6 +302,7 @@ export const SiteHeader = () => {
               href="/#features"
               className={getNavLinkClasses("features")}
               data-section="features"
+              onClick={(e) => handleNavClick(e, "features")}
             >
               Servicios
             </Link>
@@ -281,6 +310,7 @@ export const SiteHeader = () => {
               href="/#how"
               className={getNavLinkClasses("how")}
               data-section="how"
+              onClick={(e) => handleNavClick(e, "how")}
             >
               Proceso
             </Link>
@@ -288,6 +318,7 @@ export const SiteHeader = () => {
               href="/#faq"
               className={getNavLinkClasses("faq")}
               data-section="faq"
+              onClick={(e) => handleNavClick(e, "faq")}
             >
               FAQ
             </Link>
@@ -295,6 +326,7 @@ export const SiteHeader = () => {
               href="/#about"
               className={getNavLinkClasses("about")}
               data-section="about"
+              onClick={(e) => handleNavClick(e, "about")}
             >
               Quién soy
             </Link>
@@ -311,6 +343,7 @@ export const SiteHeader = () => {
                 buttonVariants(),
                 "hidden md:inline-flex h-10 px-6"
               )}
+              onClick={(e) => handleNavClick(e, "book")}
             >
               Contacto
             </Link>
@@ -351,7 +384,7 @@ export const SiteHeader = () => {
                 href="/#features"
                 className={getMobileNavLinkClasses("features")}
                 data-section="features"
-                onClick={handleCloseMenu}
+                onClick={(e) => handleNavClick(e, "features")}
               >
                 Servicios
               </Link>
@@ -359,7 +392,7 @@ export const SiteHeader = () => {
                 href="/#how"
                 className={getMobileNavLinkClasses("how")}
                 data-section="how"
-                onClick={handleCloseMenu}
+                onClick={(e) => handleNavClick(e, "how")}
               >
                 Proceso
               </Link>
@@ -367,7 +400,7 @@ export const SiteHeader = () => {
                 href="/#faq"
                 className={getMobileNavLinkClasses("faq")}
                 data-section="faq"
-                onClick={handleCloseMenu}
+                onClick={(e) => handleNavClick(e, "faq")}
               >
                 FAQ
               </Link>
@@ -375,7 +408,7 @@ export const SiteHeader = () => {
                 href="/#about"
                 className={getMobileNavLinkClasses("about")}
                 data-section="about"
-                onClick={handleCloseMenu}
+                onClick={(e) => handleNavClick(e, "about")}
               >
                 Quién soy
               </Link>
@@ -385,7 +418,7 @@ export const SiteHeader = () => {
                   buttonVariants(),
                   "w-fit h-10 px-6 mt-2 relative z-10"
                 )}
-                onClick={handleCloseMenu}
+                onClick={(e) => handleNavClick(e, "book")}
               >
                 Contacto
               </Link>
