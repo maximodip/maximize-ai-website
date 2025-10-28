@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils";
 export const HeroSection = () => {
   return (
     <section className="relative isolate mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-background via-background to-primary/5 px-4 py-10 shadow-sm md:mt-16 md:rounded-3xl md:px-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.08),_transparent_55%)] md:rounded-3xl" />
-      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_bottom,_rgba(16,185,129,0.05),_transparent_45%)] md:rounded-3xl" />
+      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_top,_rgba(18,59,122,0.12),_transparent_55%)] md:rounded-3xl" />
+      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_bottom,_rgba(0,168,198,0.08),_transparent_45%)] md:rounded-3xl" />
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 text-center md:gap-12">
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm sm:gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary sm:px-4 sm:text-sm">
-            <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="inline-block h-2 w-2 rounded-full bg-primary" />
             Disponibilidad inmediata
           </span>
           <span className="inline-flex items-center gap-2 rounded-full border border-muted/60 bg-muted/20 px-3 py-1 text-xs text-muted-foreground sm:px-4 sm:text-sm">
