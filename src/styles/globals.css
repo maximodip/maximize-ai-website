@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 191 70% 96%;
-    --foreground: 222 56% 16%;
-    --muted: 191 45% 92%;
-    --muted-foreground: 222 30% 40%;
+    --background: 204 48% 97%;
+    --foreground: 217 70% 14%;
+    --muted: 204 36% 93%;
+    --muted-foreground: 217 32% 42%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 56% 16%;
-    --border: 222 40% 84%;
-    --input: 222 40% 84%;
+    --popover-foreground: 217 70% 14%;
+    --border: 211 30% 84%;
+    --input: 211 30% 84%;
     --card: 0 0% 100%;
-    --card-foreground: 222 56% 16%;
-    --primary: 191 75% 37%;
+    --card-foreground: 217 70% 14%;
+    --primary: 189 94% 40%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 222 44% 90%;
-    --secondary-foreground: 222 56% 16%;
-    --accent: 191 55% 88%;
-    --accent-foreground: 222 56% 16%;
+    --secondary: 217 52% 92%;
+    --secondary-foreground: 217 60% 22%;
+    --accent: 189 68% 84%;
+    --accent-foreground: 217 60% 22%;
     --destructive: 0 78% 55%;
     --destructive-foreground: 0 0% 100%;
-    --ring: 191 75% 37%;
+    --ring: 189 94% 40%;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222 40% 12%;
-    --foreground: 222 92% 88%;
-    --muted: 222 32% 18%;
-    --muted-foreground: 222 46% 70%;
-    --popover: 222 40% 14%;
-    --popover-foreground: 222 92% 88%;
-    --border: 222 28% 22%;
-    --input: 222 28% 22%;
-    --card: 222 40% 14%;
-    --card-foreground: 222 92% 88%;
-    --primary: 191 75% 50%;
-    --primary-foreground: 222 40% 12%;
-    --secondary: 222 30% 24%;
-    --secondary-foreground: 222 92% 88%;
-    --accent: 191 60% 35%;
-    --accent-foreground: 222 92% 88%;
+    --background: 218 62% 10%;
+    --foreground: 188 82% 88%;
+    --muted: 218 36% 18%;
+    --muted-foreground: 189 46% 72%;
+    --popover: 218 62% 12%;
+    --popover-foreground: 188 82% 88%;
+    --border: 218 38% 24%;
+    --input: 218 38% 24%;
+    --card: 218 62% 12%;
+    --card-foreground: 188 82% 88%;
+    --primary: 189 86% 48%;
+    --primary-foreground: 217 62% 12%;
+    --secondary: 217 34% 26%;
+    --secondary-foreground: 188 82% 88%;
+    --accent: 189 70% 38%;
+    --accent-foreground: 188 90% 95%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
-    --ring: 191 75% 50%;
+    --ring: 189 86% 48%;
   }
 
   html {
@@ -179,17 +179,17 @@
   .gradient-blur {
     background: radial-gradient(
         600px circle at 0% 0%,
-        rgba(40, 60, 102, 0.18),
+        rgba(18, 59, 122, 0.2),
         transparent 45%
       ),
       radial-gradient(
         600px circle at 100% 0%,
-        rgba(28, 136, 161, 0.18),
+        rgba(0, 168, 198, 0.18),
         transparent 45%
       ),
       radial-gradient(
         700px circle at 50% 100%,
-        rgba(40, 60, 102, 0.15),
+        rgba(18, 59, 122, 0.16),
         transparent 45%
       );
     filter: blur(24px);
@@ -199,17 +199,17 @@
   .dark .gradient-blur {
     background: radial-gradient(
         800px circle at 0% 0%,
-        rgba(28, 136, 161, 0.12),
+        rgba(0, 168, 198, 0.12),
         transparent 55%
       ),
       radial-gradient(
         800px circle at 100% 0%,
-        rgba(40, 60, 102, 0.18),
+        rgba(18, 59, 122, 0.2),
         transparent 55%
       ),
       radial-gradient(
         900px circle at 50% 100%,
-        rgba(28, 136, 161, 0.12),
+        rgba(0, 168, 198, 0.12),
         transparent 55%
       );
     filter: blur(40px);
@@ -297,31 +297,31 @@
     background: linear-gradient(
       135deg,
       hsl(var(--primary)) 0%,
-      #4f46e5 50%,
-      #3730a3 100%
+      #0f3a6e 50%,
+      #082852 100%
     ) !important;
-    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.3),
-      0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(8, 40, 82, 0.35),
+      0 0 0 1px rgba(0, 0, 0, 0.2) inset !important;
+    border: 1px solid rgba(0, 0, 0, 0.25);
   }
 
   .dark button[class*="bg-gradient-to-r"][class*="from-primary"]:hover {
     background: linear-gradient(
       135deg,
-      #5b52e8 0%,
-      #4338ca 50%,
-      #312e81 100%
+      #1ab5c2 0%,
+      #114680 50%,
+      #0b335f 100%
     ) !important;
-    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.3),
-      0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    box-shadow: 0 10px 36px rgba(17, 70, 128, 0.35),
+      0 0 0 1px rgba(0, 0, 0, 0.25) inset !important;
     transform: translateY(-1px) scale(1.015) !important;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
   .dark button[class*="bg-gradient-to-r"][class*="from-primary"]:active {
     transform: translateY(0) scale(0.985) !important;
-    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3),
-      0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+    box-shadow: 0 4px 20px rgba(15, 58, 110, 0.35),
+      0 0 0 1px rgba(0, 0, 0, 0.2) inset !important;
     transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
