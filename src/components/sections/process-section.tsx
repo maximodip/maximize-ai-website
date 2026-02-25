@@ -46,7 +46,7 @@ export const ProcessSection = () => {
           {processSteps.slice(0, 3).map((s) => (
             <div
               key={s.step}
-              className="w-full md:w-[calc(33.333%-1rem)] md:max-w-[320px] rounded-xl border border-accent/40 bg-card p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/60 hover:-translate-y-1"
+              className="w-full md:w-[calc(33.333%-1rem)] md:max-w-[320px] rounded-xl border border-accent/40 bg-card p-6 transition-all duration-300 hover:border-primary/60"
             >
               <div className="text-sm font-medium text-muted-foreground">
                 {s.step}
@@ -62,7 +62,7 @@ export const ProcessSection = () => {
           {processSteps.slice(3, 6).map((s) => (
             <div
               key={s.step}
-              className="w-full md:w-[calc(33.333%-1rem)] md:max-w-[320px] rounded-xl border border-accent/40 bg-card p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/60 hover:-translate-y-1"
+              className="w-full md:w-[calc(33.333%-1rem)] md:max-w-[320px] rounded-xl border border-accent/40 bg-card p-6 transition-all duration-300 hover:border-primary/60"
             >
               <div className="text-sm font-medium text-muted-foreground">
                 {s.step}

@@ -101,6 +101,22 @@ export const SiteHeader = () => {
     }
   }, [isMenuOpen]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    };
+  }, [isMenuOpen]);
+
   // Track active section with intersection observer
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
@@ -251,31 +267,31 @@ export const SiteHeader = () => {
     };
   }, [activeSection, isMenuOpen, isUppercase, isAnimatingToHome]);
 
-  // Helper function to get nav link classes (without background now)
+  // Helper function to get nav link classes
   const getNavLinkClasses = (sectionId: string) => {
     const isActive = activeSection === sectionId;
     return cn(
       "px-3 py-2 rounded-xl transition-all duration-300 ease-out relative z-10",
       isActive
-        ? "text-foreground font-medium"
+        ? "text-primary-foreground font-medium"
         : "text-muted-foreground hover:text-foreground"
     );
   };
 
-  // Helper function for mobile nav link classes (without background now)
+  // Helper function for mobile nav link classes
   const getMobileNavLinkClasses = (sectionId: string) => {
     const isActive = activeSection === sectionId;
     return cn(
       "px-4 py-2 rounded-xl transition-all duration-300 ease-out w-full text-right relative z-10",
       isActive
-        ? "text-foreground font-medium"
+        ? "text-primary-foreground font-medium"
         : "text-muted-foreground hover:text-foreground"
     );
   };
 
   return (
     <header ref={menuRef} className="sticky top-4 z-50 w-full px-4">
-      <div className="mx-auto max-w-7xl rounded-2xl border bg-background/80 backdrop-blur-md shadow-lg shadow-black/5 supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto max-w-7xl rounded-2xl border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="flex h-16 items-center px-6">
           <div className="flex flex-1">
             <Link
@@ -320,7 +336,7 @@ export const SiteHeader = () => {
               data-section="faq"
               onClick={(e) => handleNavClick(e, "faq")}
             >
-              FAQ
+              Preguntas frecuentes
             </Link>
             <Link
               href="/#about"
@@ -353,76 +369,77 @@ export const SiteHeader = () => {
             <button
               onClick={handleToggleMenu}
               onKeyDown={handleMenuKeyDown}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300 ease-out hover:scale-105 active:scale-95 md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300 ease-out md:hidden"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? (
-                <X className="h-5 w-5 transition-transform duration-200 rotate-90" />
-              ) : (
-                <Menu className="h-5 w-5 transition-transform duration-200" />
-              )}
+              <Menu className="h-5 w-5" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — Full-screen overlay */}
       {isMenuOpen && (
-        <div className="animate-in slide-in-from-top-2 duration-200 mt-2 mx-4 md:hidden">
-          <div className="rounded-2xl border bg-background/95 backdrop-blur-md shadow-lg shadow-black/5 supports-[backdrop-filter]:bg-background/80">
+        <div className="fixed inset-0 z-[60] md:hidden">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-background animate-in fade-in duration-200"
+            onClick={handleCloseMenu}
+          />
+
+          {/* Close button */}
+          <button
+            onClick={handleCloseMenu}
+            className="absolute top-6 right-6 z-20 flex h-10 w-10 items-center justify-center rounded-xl border border-input bg-background text-foreground transition-all duration-300 hover:bg-accent"
+            aria-label="Cerrar menú"
+          >
+            <X className="h-5 w-5" />
+          </button>
+
+          {/* Nav links */}
+          <div className="relative z-10 flex h-full items-center justify-center">
             <nav
               ref={mobileNavRef}
-              className="flex flex-col items-end space-y-2 p-6 relative"
+              className="flex flex-col items-center gap-6"
             >
-              {/* Mobile Slime background */}
-              <div
-                className="absolute bg-primary/80 rounded-xl pointer-events-none z-0"
-                style={mobileSlimeStyle}
-              />
+              {([
+                { href: "/#features", section: "features", label: "Servicios" },
+                { href: "/#how", section: "how", label: "Proceso" },
+                { href: "/#faq", section: "faq", label: "Preguntas frecuentes" },
+                { href: "/#about", section: "about", label: "Quién soy" },
+              ] as const).map((item, i) => (
+                <Link
+                  key={item.section}
+                  href={item.href}
+                  data-section={item.section}
+                  onClick={(e) => handleNavClick(e, item.section)}
+                  className={cn(
+                    "text-2xl font-medium tracking-tight transition-all duration-300 animate-in fade-in slide-in-from-bottom-2",
+                    activeSection === item.section
+                      ? "text-primary"
+                      : "text-foreground/60 hover:text-foreground"
+                  )}
+                  style={{ animationDelay: `${i * 50}ms`, animationFillMode: "both" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
-              <Link
-                href="/#features"
-                className={getMobileNavLinkClasses("features")}
-                data-section="features"
-                onClick={(e) => handleNavClick(e, "features")}
-              >
-                Servicios
-              </Link>
-              <Link
-                href="/#how"
-                className={getMobileNavLinkClasses("how")}
-                data-section="how"
-                onClick={(e) => handleNavClick(e, "how")}
-              >
-                Proceso
-              </Link>
-              <Link
-                href="/#faq"
-                className={getMobileNavLinkClasses("faq")}
-                data-section="faq"
-                onClick={(e) => handleNavClick(e, "faq")}
-              >
-                FAQ
-              </Link>
-              <Link
-                href="/#about"
-                className={getMobileNavLinkClasses("about")}
-                data-section="about"
-                onClick={(e) => handleNavClick(e, "about")}
-              >
-                Quién soy
-              </Link>
-              <Link
-                href="/#book"
-                className={cn(
-                  buttonVariants(),
-                  "w-fit h-10 px-6 mt-2 relative z-10"
-                )}
-                onClick={(e) => handleNavClick(e, "book")}
-              >
-                Contacto
-              </Link>
+              <div className="mt-6 animate-in fade-in slide-in-from-bottom-2" style={{ animationDelay: "200ms", animationFillMode: "both" }}>
+                <a
+                  href="https://api.whatsapp.com/send?phone=5493816708372&text=Hola%20Máximo%20quiero%20implementar%20una%20infraestructura%20de%20IA%20en%20mi%20negocio"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={cn(
+                    buttonVariants(),
+                    "h-11 px-8 text-base"
+                  )}
+                  onClick={handleCloseMenu}
+                >
+                  Contacto
+                </a>
+              </div>
             </nav>
           </div>
         </div>

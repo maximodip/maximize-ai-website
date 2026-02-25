@@ -92,7 +92,7 @@ export const FAQSection = () => {
           return (
             <div
               key={index}
-              className="rounded-xl border border-accent/40 bg-card transition-all duration-300 ease-out hover:shadow-lg hover:border-primary/60 hover:scale-[1.01]"
+              className="rounded-xl border border-accent/40 bg-card transition-all duration-300 ease-out hover:border-primary/60"
             >
               <button
                 onClick={(e) => handleClick(index, e)}

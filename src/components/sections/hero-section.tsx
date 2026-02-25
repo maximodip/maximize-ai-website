@@ -6,9 +6,7 @@ import { cn } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
-    <section className="relative isolate mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-background via-background to-primary/5 px-4 py-10 shadow-sm md:mt-16 md:rounded-3xl md:px-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_top,_rgba(18,59,122,0.12),_transparent_55%)] md:rounded-3xl" />
-      <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl bg-[radial-gradient(circle_at_bottom,_rgba(0,168,198,0.08),_transparent_45%)] md:rounded-3xl" />
+    <section className="relative isolate mt-8 rounded-2xl border border-border/60 bg-background px-4 py-10 md:mt-16 md:rounded-3xl md:px-12 md:py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 text-center md:gap-12">
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm sm:gap-3">

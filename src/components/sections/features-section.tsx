@@ -54,7 +54,7 @@ export const FeaturesSection = () => {
           return (
             <div
               key={item.title}
-              className="group rounded-xl border bg-card p-6 shadow-sm transition-all duration-400 ease-out hover:shadow-md hover:-translate-y-2 hover:scale-[1.02]"
+              className="group rounded-xl border bg-card p-6 transition-all duration-300 ease-out hover:border-primary/60"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15 text-primary transition-all duration-300 ease-out group-hover:bg-primary group-hover:text-primary-foreground">
                 <Icon className="h-6 w-6 transition-transform duration-300 ease-out group-hover:scale-105" />
@@ -77,7 +77,7 @@ export const FeaturesSection = () => {
         })}
       </div>
 
-      <div className="mx-auto max-w-3xl rounded-xl border border-primary/20 bg-gradient-to-br from-card to-primary/5 p-6 shadow-sm">
+      <div className="mx-auto max-w-3xl rounded-xl border border-primary/20 bg-card p-6">
         <div className="space-y-3 text-sm">
           <p className="flex items-start gap-2">
             <span className="mt-0.5 inline-block h-1.5 w-1.5 rounded-full bg-primary" />

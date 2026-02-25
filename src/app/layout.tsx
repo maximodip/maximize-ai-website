@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TextCaseProvider } from "@/components/text-case-provider";
 import { StructuredData } from "@/components/structured-data";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -144,10 +145,10 @@ export default function RootLayout({
           disableTransitionOnChange={false}
         >
           <TextCaseProvider>
-            <div className="fixed inset-0 -z-10 gradient-blur" aria-hidden />
             <SiteHeader />
             <div id="home" className="scroll-mt-24" />
             <main className="container px-4 md:px-6">{children}</main>
+            <ScrollToTop />
           </TextCaseProvider>
         </ThemeProvider>
       </body>

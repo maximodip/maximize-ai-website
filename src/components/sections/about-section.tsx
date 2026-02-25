@@ -59,10 +59,10 @@ export const AboutSection = () => {
           </div>
           <div className="flex justify-center">
             <div className="relative">
-              <div className="h-80 w-64 rounded-2xl border bg-gradient-to-br from-background to-accent p-1">
+              <div className="h-80 w-64 rounded-2xl border bg-accent p-1">
                 <div className="flex h-full w-full items-center justify-center rounded-xl bg-background">
                   <div className="text-center">
-                    <div className="mx-auto h-24 w-24 rounded-full bg-gradient-to-br from-primary to-accent p-1">
+                    <div className="mx-auto h-24 w-24 rounded-full bg-primary p-1">
                       <div className="flex h-full w-full items-center justify-center rounded-full bg-background text-2xl font-bold text-primary">
                         MD
                       </div>
