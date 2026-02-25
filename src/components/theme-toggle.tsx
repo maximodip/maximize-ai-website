@@ -21,12 +21,15 @@ export const ThemeToggle = () => {
 
   const isDark = resolvedTheme === "dark";
 
-  const handleClick = () => setTheme(isDark ? "light" : "dark");
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setTheme(isDark ? "light" : "dark");
+    e.currentTarget.blur();
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      handleClick();
+      setTheme(isDark ? "light" : "dark");
     }
   };
 
